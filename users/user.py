@@ -279,12 +279,12 @@ async def tek2Bot(cal:CallbackQuery, state:FSMContext):
         foiz = (tj_soni / savol_soni) * 100
         if foiz > 80.0:
             await cal.message.answer_sticker(sticker="CAACAgIAAxkBAAKXomdQhenR38UBuR2WYAvjRrCBDrHNAAJNAAMkcWIaP0h_gyO63p02BA")
-            await cal.message.answer(f"🥳Tabriklaymiz siz 80 % dan yoqori natijani qayd etdingiz 🎉\nJami savollar soni: {savol_soni}\nTo'gri javoblar soni: {tj_soni}\nFoiz: {foiz} %" ,reply_markup=Buttom_user_yes)
+            await cal.message.answer(f"🥳Tabriklaymiz siz 80 % dan yoqori natijani qayd etdingiz 🎉\nJami savollar soni: {savol_soni}\nTo'gri javoblar soni: {tj_soni}\nFoiz: {round(foiz, 1)} %" ,reply_markup=Buttom_user_yes)
         elif foiz < 20.0:
             await cal.message.answer_sticker(sticker="CAACAgIAAxkBAAKXpGdQhnU61enl3Ee9LWP3Z2g8OOg2AAJPAAMkcWIaWMzn4qdTlUg2BA")
-            await cal.message.answer(f"🙁 Afsiski siz 20 % dan past natijani qayd etdingiz 👎\nJami savollar soni: {savol_soni}\nTo'gri javoblar soni: {tj_soni}\nFoiz: {foiz} %", reply_markup=Buttom_user_yes)
+            await cal.message.answer(f"🙁 Afsiski siz 20 % dan past natijani qayd etdingiz 👎\nJami savollar soni: {savol_soni}\nTo'gri javoblar soni: {tj_soni}\nFoiz: {round(foiz, 1)} %", reply_markup=Buttom_user_yes)
         else:
-            await cal.message.answer(f"Jami savollar soni: {savol_soni}\nTo'gri javoblar soni: {tj_soni}\nFoiz: {foiz} %", reply_markup=Buttom_user_yes)
+            await cal.message.answer(f"Jami savollar soni: {savol_soni}\nTo'gri javoblar soni: {tj_soni}\nFoiz: {round(foiz, 1)} %", reply_markup=Buttom_user_yes)
         for i in readusers():
             c.append(i[2])
         if cal.from_user.id in c:
